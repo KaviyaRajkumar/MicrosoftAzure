@@ -18,4 +18,18 @@ Microsoft Azure
    Don’t have to wait to build a new physical datacenter.
 
 2. Shared responsibility model
+   Responsibilities are shared between the cloud provider and the consumer
+   a. Cloud provide responsibilities
+      i) Physical security
+     ii) Power
+    iii) Cooling
+     iv) Network connectivity
+  b. Consumer responsibilities
+     i) Data and information stored in the cloud
+    ii) Access security, meaning you only give access to those who need it
+
+    Infrastructure as a service (IaaS) - Consumer responsibility
+    Platform as a service (PaaS) - Evenly distributes responsibility between the cloud provider and the consumer
+    Software as a service (SaaS) - Cloud provider responsibility
+     
    
