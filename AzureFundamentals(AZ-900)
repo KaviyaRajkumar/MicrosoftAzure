@@ -1,0 +1,21 @@
+Microsoft Azure
+1. Compute
+2. Networking
+3. Storage services
+4. Cloud security best practices
+5. Governance and management options
+
+1. Cloud computing
+   Cloud computing is the delivery of computing services over the internet.
+   Computing services are:
+   a. Virtual machines
+   b. Storage
+   c. Databases
+   d. Networking
+   e. Internet of Things (IoT), machine learning (ML), and artificial intelligence (AI)
+   Cloud computing = Compute power + Storage
+   Only pay for the resources used.
+   Don’t have to wait to build a new physical datacenter.
+
+2. Shared responsibility model
+   
