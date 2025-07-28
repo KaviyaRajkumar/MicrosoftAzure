@@ -178,7 +178,24 @@ b. Scalability
       1. Track your resource use in real time, monitor resources to ensure that you’re using them in the most efficient way
       2. Apply data analytics to find patterns and trends that help better plan resource deployments. 
       3. By operating in the cloud and using cloud analytics and information, you can predict future costs and adjust your resources as needed
-      
+
+  3. Benefits of security and governance in the cloud
+     Ensure that all your deployed resources meet corporate standards and government regulatory requirements.
+     You can update all your deployed resources to new standards as standards change.
+     Cloud-based auditing helps flag any resource that’s out of compliance with your corporate standards and provides mitigation strategies. 
+     Depending on your operating model, software patches and updates may also automatically be applied, which helps with both governance and security.
+
+     Security
+     a. Find a cloud solution that matches your security needs
+        Model	You Manage	                 Provider Manages	           Security Control
+        IaaS	OS, patches, software	     Hardware, virtualization	     Maximum
+        PaaS	App code	                    OS, runtime, patches	        Moderate
+        SaaS	Data, user access	           Everything else(Eg:Gmail)	  Minimal
+     b. The cloud is intended as an over-the-internet delivery of IT resources, 
+        cloud providers are typically well suited to handle things like distributed denial of service (DDoS) attacks, 
+        making your network more robust and secure.
+     
+     
       
 
 
