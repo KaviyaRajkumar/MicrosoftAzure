@@ -201,7 +201,32 @@ b. Scalability
                                                                Monitor the helath and automatically replace failing resources, 
                                                                Receive automatic alerts)
     2. Management in the cloud - How? - Web portal, Using command line interface, APIs, PowerShell
-     
+
+Module 3
+
+Infrastructure as a Service
+1. FLexible-Provides you the maximum amount of control for your cloud resources.
+   
+   Cloud provider responsibility - Hardware, Network connectivity (to the internet), and physical security
+   Consumer responsibility - Everything else(operating system installation, configuration, and maintenance; network configuration; database and storage configuration)
+   
+Platform as a Service
+1. Middle ground between renting space in a datacenter (infrastructure as a service) and paying for a complete and deployed solution (software as a service).
+   Consumer don't have to worry about the licensing or patching for operating systems and databases.
+
+   Cloud provider responsibility - Physical infrastructure, physical security, and connection to the internet.
+                                   Maintain the operating systems, middleware, development tools, and business intelligence services
+   Consumer responsibility - Application building, Information and data, Devices, Accounts and identities
+
+   Depending on the configuration, you or the cloud provider may be responsible for 
+   1. Networking settings and connectivity within your cloud environment
+   2. Network and application security
+   3. The directory infrastructure.
+
+Software as a Service
+1. Renting or using a fully developed application(Email, financial software, messaging applications, and connectivity software)
+   
+
      
       
 
