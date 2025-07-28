@@ -231,7 +231,22 @@ Platform as a Service
 Software as a Service
 1. Renting or using a fully developed application(Email, financial software, messaging applications, and connectivity software)
    Example: Email and messaging, Business productivity applications, Finance and expense tracking.
-   
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+             Core architectural components of Azure 
+
+Azure accounts
+  Azure account -> Subscription(one or more) -> Resource groups -> Resources
+  Single Azure account for your business and separate subscriptions for development, marketing, and sales departments
+
+  Azure free account: https://azure.microsoft.com/free
+  Azure free student account: https://azure.microsoft.com/free/students/
+
+  Microsoft Learn sandbox: Creates a temporary subscription that's added to your Azure account. 
+  This temporary subscription allows you to create Azure resources during a Learn module. 
+  Learn automatically cleans up the temporary resources for you after you've completed the module.
+  
 
      
       
