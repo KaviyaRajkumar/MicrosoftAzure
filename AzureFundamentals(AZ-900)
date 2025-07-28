@@ -1,10 +1,11 @@
-Microsoft Azure
+Microsoft Azure 
 1. Compute
 2. Networking
 3. Storage services
 4. Cloud security best practices
 5. Governance and management options
 
+Module 1
 1. Cloud computing
    Cloud computing is the delivery of computing services over the internet.
    Computing services are:
@@ -92,6 +93,45 @@ What is VMWare? Provides the software that runs on a physical server to host mul
                Each VM gets virtual storage (a virtual hard disk), which is stored on the server’s physical disk or shared storage.
                You can install databases inside VMs just like you would on a physical computer.
                Think of the physical server as a building, VMware as the architect, VMs as apartments, and the database as a tenant storing things in their apartment. The space they use is part of the building’s total capacity.
+
+Consumption-based model
+IT infrastructure models has two types of expenses to consider
+a. Capital expenditure (CapEx) 
+b. Operational expenditure (OpEx)
+
+CapEx - One-time, up-front expenditure to purchase or secure tangible resources. 
+        A new building, repaving the parking lot, building a datacenter, or buying a company vehicle.
+OpEx  - Spending money on services or products over time(Eg: monthly). 
+        Renting a convention center, leasing a company vehicle, or signing up for cloud services are all examples of OpEx.
+
+Cloud computing falls under OpEx because cloud computing operates on a consumption-based model. 
+You pay for the IT resources you use. 
+If you don’t use any IT resources this month, you don’t pay for any IT resources.
+
+This consumption-based model has many benefits, including:
+
+1. No upfront costs.
+2. No need to purchase and manage costly infrastructure that users might not use to its fullest potential.
+3. The ability to pay for more resources when they're needed.
+4. The ability to stop paying for resources that are no longer needed.
+
+Cloud computing is the delivery of computing services over the internet by using a pay-as-you-go pricing model. You typically pay only for the cloud services you use, which helps you:
+
+1. Plan and manage your operating costs.
+2. Run your infrastructure more efficiently.
+3. Scale as your business needs change.
+
+Module 2
+Benefits of using cloud services
+
+1. High availability(uptime) and scalability(handle demand) in the cloud
+High availability
+SLA - Service Level Agreement - The agreement between the service provider(Azure) and customer
+Azure SLA - Represented as % related to the application availablility. 
+            Up time - How mcuh % of time will the service be available.
+            Down time - How mcuh % of time is the service not available. Credit(money) will be given to consumer if the down time is breached.
+High SLA = High cost
+SLA in azure depends on the services - Like 99%, 99.95%, 99.99%
 
 
    
