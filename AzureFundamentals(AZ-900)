@@ -194,6 +194,13 @@ b. Scalability
      b. The cloud is intended as an over-the-internet delivery of IT resources, 
         cloud providers are typically well suited to handle things like distributed denial of service (DDoS) attacks, 
         making your network more robust and secure.
+
+ 4. Benefits of manageability in the cloud
+    There are two types
+    1. Management of the cloud - Managing your cloud resources(Scale resource, 
+                                                               Monitor the helath and automatically replace failing resources, 
+                                                               Receive automatic alerts)
+    2. Management in the cloud - How? - Web portal, Using command line interface, APIs, PowerShell
      
      
       
