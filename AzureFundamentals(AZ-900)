@@ -19,7 +19,7 @@ Microsoft Azure
 
 2. Shared responsibility model
    Responsibilities are shared between the cloud provider and the consumer
-   a. Cloud provide responsibilities
+   a. Cloud provider responsibilities
       i) Physical security
      ii) Power
     iii) Cooling
@@ -31,5 +31,69 @@ Microsoft Azure
     Infrastructure as a service (IaaS) - Consumer responsibility
     Platform as a service (PaaS) - Evenly distributes responsibility between the cloud provider and the consumer
     Software as a service (SaaS) - Cloud provider responsibility
+
+3. Cloud modules
+   The deployment type of cloud resources
+   The three main cloud models are: 
+   i) Private
+  ii) Public
+ iii) Hybrid
+
+    Private cloud: 
+     A private cloud is the natural evolution from a corporate datacenter.
+     It’s a cloud (delivering IT services over the internet) that’s used by a single entity. 
+     Private cloud provides much greater control for the company and its IT department. 
+     However, it also comes with greater cost and fewer of the benefits of a public cloud deployment. 
+     Finally, a private cloud may be hosted from your 
+     a. on site datacenter - Your company owns and manages the servers and infrastructure(On your premises).
+     b. Can be hosted in a dedicated datacenter offsite - The infrastructure is located outside your company premises, but still used only by your company.
+     c. A third party that has dedicated that datacenter to your company(Azure).
+   
+    Public cloud
+     A public cloud is built, controlled, and maintained by a third-party cloud provider. 
+     With a public cloud, anyone that wants to purchase cloud services can access and use resources.
+
+   Hybrid cloud
+     Uses both public and private clouds in an inter-connected environment
+     Hybrid cloud can be used to provide an extra layer of security. 
+     Users can flexibly choose which services to keep in public cloud and which to deploy to their private cloud infrastructure.
+
+  Multi-cloud
+     Use multiple public cloud providers. 
+     Maybe you use different features from different cloud providers. 
+     Or maybe you started your cloud journey with one provider and are in the process of migrating to a different provider. 
+     Regardless, in a multi-cloud environment you deal with two (or more) public cloud providers and manage resources and security in both environments.
+
+Azure Arc
+   Azure Arc is a set of technologies that helps manage your cloud environment. 
+   Azure Arc can help manage your cloud environment whether
+   a. It's a public cloud solely on Azure
+   b. A private cloud in your datacenter
+   c. A hybrid configuration
+   d. Even a multi-cloud environment running on multiple cloud providers at once.
+
+Azure VMware Solution
+What if you’re already established with VMware in a private cloud environment but want to migrate to a public or hybrid cloud? 
+Azure VMware Solution lets you run your VMware workloads in Azure with seamless integration and scalability.
+
+What is VMWare? Provides the software that runs on a physical server to host multiple VM's. 
+                It allows you to create and run multiple virtual machines (VMs) on that server.
+                Physical Server Has real hardware: CPU, RAM, and physical storage (like SSDs or HDDs).
+                
+                A physical server usually has multi-core CPUs (e.g., 16 cores or more).
+                VMware lets you divide those cores into virtual CPUs (vCPUs).
+                Each VM gets a certain number of vCPUs, which are scheduled to run on the physical cores.
+                So, a server with 16 cores could run:
+                              8 VMs with 2 vCPUs each
+                              Or 16 VMs with 1 vCPU each
+                              Or even more, depending on workload and scheduling
+               
+               Storage and Databases
+               Each VM gets virtual storage (a virtual hard disk), which is stored on the server’s physical disk or shared storage.
+               You can install databases inside VMs just like you would on a physical computer.
+               Think of the physical server as a building, VMware as the architect, VMs as apartments, and the database as a tenant storing things in their apartment. The space they use is part of the building’s total capacity.
+
+
+   
      
    
