@@ -284,7 +284,82 @@ Sovereign Regions
 * Sovereign regions are instances of Azure that are isolated from the main instance of Azure.
 * Sovereign region are used for compliance or legal purposes.
 
+Azure management infrastructure
+1. Resources 
+2. Resource groups
+3. Subscriptions
+4. Accounts
 
+1. Resources:
+   * Resource is the basic building block of Azure
+   * Anything you create, provision, deploy, etc. is a resource
+   * Virtual Machines (VMs), virtual networks, databases, cognitive services, etc. are all considered resources within Azure.
+
+2. Resource groups:
+   * Groupings of resources.
+   * A single resource can only be in one resource group at a time.
+   * Resource groups can't be nested, meaning you can’t put resource group B inside of resource group A.
+   * When you apply an action to a resource group, that action will apply to all the resources within the resource group.
+   * If you delete a resource group, all the resources will be deleted.
+   * If you grant or deny access to a resource group, you’ve granted or denied access to all the resources within the resource group.
+
+3. Azure subscriptions:
+   * Subscriptions are a unit of 
+      a. Management
+      b. Billing
+      c. Scale
+    * A subscription provides you with authenticated and authorized access to Azure products and services. 
+    * It also allows you to provision resources. (When you provision a virtual machine, you're allocating CPU, memory, disk space, and installing an operating system)
+    * An account can have multiple subscriptions
+
+
+      You only need one subscription to use Azure.
+      But you can have multiple subscriptions to organize things better.
+      Why Multiple Subscriptions?
+
+      1. To separate billing for different teams or projects.
+      2. To control access differently for different departments or environments.
+
+      Two Types of Boundaries in Azure Subscriptions
+      1. Billing Boundary
+      * Determines how you're charged.
+      * Each subscription gets its own invoice.
+      * Example: One subscription for Dev, another for Prod, each with its own budget.
+      2. Access Control Boundary
+      * Determines who can do what.
+      * You can apply different policies to different subscriptions.
+      * Example: HR department has access to one subscription, Finance to another.
+
+      Example, you can create:
+      One subscription for Dev (with limited access and lower cost).
+      One for Prod (with stricter access and higher performance).
+      One for Finance (read-only access to billing data).
+
+   Azure management groups
+     * Resources are gathered into resource groups, and resource groups are gathered into subscriptions.
+     * Azure management groups provide a level of scope above subscriptions.(root)
+     * All subscriptions within a management group automatically inherit the conditions applied to the management group
+     * Management group -> Subscriptions -> Resource groups -> Resources
+
+     * Azure role-based access control (Azure RBAC) 
+
+      Important facts about management groups:
+      * 10,000 management groups can be supported in a single directory.
+      * A management group tree can support up to six levels of depth. This limit doesn't include the root level or the subscription level.
+      * Each management group and subscription can support only one parent.
+
+      Management Group: Production
+      │
+      ├── Policy: Allow VMs only in US West
+      │
+      ├── Subscription A
+      │   └── VM (Policy enforced)
+      │
+      ├── Subscription B
+      │   └── VM (Policy enforced)
+      │
+      └── Azure RBAC: Contributor role assigned to user@company.com
+          └── Inherited by all subscriptions and resources
 
 
 
