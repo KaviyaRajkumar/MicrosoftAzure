@@ -246,9 +246,43 @@ Azure accounts
   Microsoft Learn sandbox: Creates a temporary subscription that's added to your Azure account. 
   This temporary subscription allows you to create Azure resources during a Learn module. 
   Learn automatically cleans up the temporary resources for you after you've completed the module.
-  
 
-     
+ Lear sandbox can be used using the below methods or use Azure portal(https://portal.azure.com/learn.docs.microsoft.com)
+ 1. PowerShell CLI
+ 2. BASH CLI
+ 3. Azure CLI interactive mode
+
+Physical infrastructure
+* Azure starts with datacenters.
+* Azure has datacenters around the world.
+
+Datacenters are grouped into 
+1. Azure Regions 
+2. Azure Availability Zones
+
+Regions: Chennai
+* Region is a geographical area on the planet
+* Contains at least one, but potentially multiple datacenters(networked together with a low-latency network)
+
+Availability Zones: Annanagar, T.Nagar, Velacherry
+* Physically separate datacenters within an Azure region.
+* If one zone goes down, the other continues working. 
+* Availability zones are connected through high-speed, private fiber-optic networks.
+* Availability zones are primarily for VMs, managed disks, load balancers, and SQL databases.
+
+ Azure services that support availability zones fall into three categories:
+ 1. Zonal services: You pin the resource to a specific zone (for example, VMs, managed disks, IP addresses).
+ 2. Zone-redundant services: The platform replicates automatically across zones
+ 3. Non-regional services: Services are always available from Azure
+
+Region pairs
+* Most Azure regions are paired with another region within the same geography
+* For example, if a region in a pair was affected by a natural disaster, services would automatically fail over to the other region in its region pair.
+* EX: West US paired with East US and South-East Asia paired with East Asia
+
+Sovereign Regions
+* Sovereign regions are instances of Azure that are isolated from the main instance of Azure.
+* Sovereign region are used for compliance or legal purposes.
       
 
 
