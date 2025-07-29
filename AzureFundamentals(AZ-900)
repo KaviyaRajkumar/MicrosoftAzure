@@ -275,7 +275,7 @@ Availability Zones: Annanagar, T.Nagar, Velacherry
  2. Zone-redundant services: The platform replicates automatically across zones
  3. Non-regional services: Services are always available from Azure
 
-Region pairs
+Region pairs(300 miles away)
 * Most Azure regions are paired with another region within the same geography
 * For example, if a region in a pair was affected by a natural disaster, services would automatically fail over to the other region in its region pair.
 * EX: West US paired with East US and South-East Asia paired with East Asia
