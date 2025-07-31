@@ -362,11 +362,77 @@ Azure management infrastructure
           └── Inherited by all subscriptions and resources
 
 
+Module 2
+Azure compute and networking services
 
+   a. Compute options
+      1. Virtual machines
+      2. Containers
+      3. Azure functions
 
-   
+   b. Networking features
+      1. Azure virtual networks
+      2. Azure DNS
+      3. Azure ExpressRoute
 
+Compute options
+1. Azure virtual machines
+   * You can create and use VMs in the cloud. 
+   * VMs provide infrastructure as a service (IaaS)
 
-   
-     
-   
+VMs are an ideal choice when you need:
+   * Total control over the operating system (OS) -       Test your application on Ubuntu 22.04, Windows Server 2019, and CentOS 7.
+   * The ability to run custom software -                 Java application that depends on an old version of Java (e.g., JDK 6) and a specific version of Tomcat.
+   * To use custom hosting configurations -               A web server (Apache), An app server (Spring Boot), A database (PostgreSQL) - Configure each component on separate VMs, set up custom networking between them, and even simulate firewalls or load balancers
+As an IaaS offering, you still need to configure, update, and maintain the software that runs on the VM.
+
+Image :  
+      An image is a template used to create a VM and may already include an OS and other software, 
+      like development tools or web hosting environments.
+
+Scale VMs in Azure
+1. Run single VMs for testing, development, or minor tasks.
+2. Group VMs together to provide high availability, scalability, and redundancy.
+   Types: 
+      a. Scale sets
+      b. Availability sets
+
+Virtual machine scale sets
+1. Create and manage a group of identical, load-balanced VMs
+2. Scale sets allow you to centrally manage, configure, and update a large number of VMs in minutes. 
+3. The number of VM instances can automatically increase or decrease in response to demand, or you can set it to scale based on a defined schedule. 
+4. VM Scale sets also automatically deploy a load balancer to make sure that your resources are being used efficiently. 
+5. VM scale sets, you can build large-scale services for areas such as compute, big data, and container workloads.
+
+Availability sets
+1. Tool to help you build a more resilient, highly available environment
+2. Ensure that VMs 
+   a. Stagger updates 
+   b. Has power and network connectivity,
+
+Update domain: 
+* The update domain groups VMs that can be rebooted at the same time. 
+* This setup allows you to apply updates while knowing that only one update domain grouping is offline at a time. 
+* All of the machines in one update domain update. An update group going through the update process is given a 30-minute time to recover before maintenance on the next update domain starts.
+
+Fault domain: 
+* The fault domain groups your VMs by common power source and network switch. 
+* By default, an availability set splits your VMs across up to three fault domains. 
+* This helps protect against a physical power or networking failure by having VMs in different fault domains (thus being connected to different power and networking resources).
+
+Examples of when to use VMs
+1. During testing and development
+2. When running applications in the cloud  
+3. When extending your datacenter to the cloud(On-premis+Cloud)
+4. During disaster recovery
+
+2. Azure Virtual Desktop
+Another type of virtual machine is the Azure Virtual Desktop.
+   * Azure Virtual Desktop is a virtualization service that runs on the cloud
+   * Use a cloud-hosted version of Windows from any location
+   * Azure Virtual Desktop works across devices and operating systems, and works with apps that you can use to access remote desktops/most modern browsers.
+Enhance security
+   1. Enable multifactor authentication to secure user sign-ins
+   2. Assigning granular role-based access controls (RBACs) to users
+
+3.Azure containers
