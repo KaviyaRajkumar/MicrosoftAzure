@@ -511,7 +511,32 @@ Enhance security
      If something necessitated such a change, you could also choose to change the storage service or 
      modify the front end without impacting any of the other components.
 
+   
+   Azure functions
+   Serverless compute option that doesn’t require maintaining virtual machines or containers
+   (Responsibility of managing the server is taken care)
+   
+   Abstraction of server 
+   - No infra management(No need to focous on admin task - installing OS)
+   - Scaling 
+   - Only pay for what you use
 
+   Using Azure Functions is ideal when you're only concerned about the code running your service 
+   and not about the underlying platform or infrastructure.
+   Functions scale automatically based on demand, so they may be a good choice when demand is variable.
+   Azure Functions runs your code when it triggers and automatically deallocates resources when the function is finished. In this model, Azure only charges you for the CPU time used while your function runs.
+
+   Scenario	                                    Charged?
+   User logs in → triggers a function	         Yes
+   No one uses the app for hours	               No
+   Function runs for 2 seconds	               Charged for 2 seconds only
+
+   Functions can be either 
+   Stateless - Stateless (the default), behave as if they restart every time they respond to an event. 
+               Good for simple, independent tasks (e.g., sending an email, logging an event).
+
+   Stateful  - Stateful (called Durable Functions), a context is passed through the function to track prior activity.
+               Example: A function that tracks the status of an order over time.
 
 
    
