@@ -639,4 +639,184 @@ Azure virtual networks provide the following key networking capabilities:
       Gives fine-grained control over traffic flow.
       Useful for directing traffic through NVAs or specific paths
 
-  
+Azure virtual private networks
+A virtual private network (VPN) uses an encrypted tunnel within another network.
+VPNs are typically deployed to connect two or more trusted private networks to one another over an untrusted network (typically the public internet).
+Traffic is encrypted while traveling over the untrusted network to prevent eavesdropping or other attacks. 
+VPNs can enable networks to safely and securely share sensitive information.
+
+VPN gateways
+Azure VPN Gateway instances are deployed in a dedicated subnet of the virtual network and enable the following connectivity:
+
+1. Connect on-premises datacenters to virtual networks through a site-to-site connection.
+2. Connect individual devices to virtual networks through a point-to-site connection.
+3. Connect virtual networks to other virtual networks through a network-to-network connection.
+
+* All data transfer is encrypted inside a private tunnel as it crosses the internet.
+* You can deploy only one VPN gateway in each virtual network. However, you can use one gateway to connect to multiple locations, which includes other virtual networks or on-premises datacenters.
+
+In Azure, regardless of the VPN type, the method of authentication employed is a preshared key.
+Two types
+
+Policy-based VPN gateways 
+In Route-based gateways
+
+Feature	            Policy-Based VPN	                     Route-Based VPN
+
+Routing Method	      Static IP rules	                     IP routing (static/dynamic)
+Flexibility	         Low	                                 High
+Tunnel Selection	   Based on IP pairs	                     Based on routing table
+Subnet Changes	      Manual updates needed	               Automatically adapts
+Use Case	            Simple, fixed networks	               Complex, scalable networks
+
+
+Use a route-based VPN gateway if you need any of the following types of connectivity:
+* Connections between virtual networks
+* Point-to-site connections
+* Multisite connections
+* Coexistence with an Azure ExpressRoute gateway
+
+High-availability scenarios
+If you’re configuring a VPN to keep your information safe, you also want to be sure that 
+it’s a highly available and fault tolerant VPN configuration. There are a few ways to maximize the resiliency of your VPN gateway.
+
+1. Active/standby
+2. Active/active
+3. ExpressRoute failover
+4. Zero-redundant gateways
+
+1. Active/Standby
+* Default setup in Azure.
+* One VPN gateway is active, the other is standby.
+* If the active gateway fails, traffic automatically switches to the standby.
+* Ensures basic fault tolerance.
+
+2. Active/Active
+* Both gateways are active simultaneously.
+* Supports higher throughput and redundancy.
+* Ideal for mission-critical workloads.
+* Requires BGP (Border Gateway Protocol) for dynamic routing.
+
+3. ExpressRoute Failover
+* Combines ExpressRoute (private connection) with VPN.
+* If ExpressRoute fails, traffic automatically switches to VPN.
+* Ensures connectivity continuity between on-premises and Azure.
+
+4. Zero-Redundant Gateways
+* Only one gateway instance, no backup.
+* Lowest cost, but no fault tolerance.
+* Suitable for non-critical or test environments.
+
+Azure ExpressRoute
+Azure ExpressRoute lets you extend your on-premises networks into the Microsoft cloud over a private connection, with the help of a connectivity provider.
+Each location would have its own ExpressRoute circuit.
+
+Connectivity can be from an any-to-any (IP VPN) network, a point-to-point Ethernet network, 
+or a virtual cross-connection through a connectivity provider at a colocation facility
+
+Features and benefits of ExpressRoute
+1. Connectivity to Microsoft cloud services across all regions in the geopolitical region.
+2. Global connectivity to Microsoft services across all regions with the ExpressRoute Global Reach.
+3. Dynamic routing between your network and Microsoft via Border Gateway Protocol (BGP).
+4. Built-in redundancy in every peering location for higher reliability.
+
+Connectivity to Microsoft cloud services
+ExpressRoute enables direct access to the following services in all regions:
+
+1. Microsoft Office 365
+2. Microsoft Dynamics 365
+3. Azure compute services, such as Azure Virtual Machines
+4. Azure cloud services, such as Azure Cosmos DB and Azure Storage
+
+
+Global Connectivity
+* ExpressRoute Global Reach lets you connect multiple on-premises sites across the globe.
+* Example: Office in Asia and datacenter in Europe can communicate securely via Microsoft’s backbone.
+* No public internet involved—data stays private and secure.
+
+Dynamic Routing
+* ExpressRoute uses BGP (Border Gateway Protocol).
+* BGP enables automatic route updates between your on-premises network and Azure.
+* Helps adapt to network changes without manual reconfiguration.
+
+Built-in Redundancy
+* Connectivity providers use redundant hardware to ensure high availability.
+* You can configure multiple ExpressRoute circuits for extra fault tolerance.
+* Ensures continuous connectivity even if one circuit fails.
+
+ExpressRoute connectivity models
+ExpressRoute supports four models that you can use to connect your on-premises network to the Microsoft cloud:
+
+1. CloudExchange colocation
+2. Point-to-point Ethernet connection
+3. Any-to-any connection
+4. Directly from ExpressRoute sites
+
+1. Colocation at a Cloud Exchange
+* Your facility (datacenter or office) is physically located at a cloud exchange (e.g., ISP).
+* You can request a virtual cross-connect to Microsoft’s network.
+* Ideal for enterprises already colocated with cloud providers.
+
+2. Point-to-Point Ethernet Connection
+* A direct Ethernet link between your facility and Microsoft’s cloud.
+* Typically set up via a network service provider.
+* Offers private, secure, and dedicated connectivity.
+
+3. Any-to-Any Networks
+* Integrates your WAN (Wide Area Network) with Azure.
+* Connects multiple offices and datacenters to Azure like a branch office setup.
+* Uses provider-managed MPLS networks for seamless connectivity.
+
+4. Directly from ExpressRoute Sites
+* Connect directly to Microsoft’s global network at peering locations.
+* ExpressRoute Direct offers:
+      Dual 100 Gbps or 10 Gbps connections
+      Active/Active high-throughput setup
+      Best for large enterprises needing massive bandwidth and high availability.
+
+
+Security considerations
+With ExpressRoute, your data doesn't travel over the public internet, 
+reducing the risks associated with internet communications. 
+ExpressRoute is a private connection from your on-premises infrastructure to your Azure infrastructure. 
+Even if you have an ExpressRoute connection, DNS queries, certificate revocation list checking, and Azure Content Delivery Network requests are still sent over the public internet.
+
+Azure DNS(Domain Name System):
+
+What is DNS?
+DNS is like the phonebook of the internet. It translates human-friendly domain names (like www.microsoft.com) into IP addresses (like 20.81.111.85) that computers use to locate each other.
+
+How DNS Works (Step-by-Step)
+1. You enter a domain name in your browser.
+2. Your computer asks a DNS resolver (usually from your ISP).
+3. The resolver checks its cache or asks other DNS servers.
+4. It finds the IP address and sends it back.
+5. Your browser connects to that IP and loads the site.
+
+Benefits of Azure DNS
+1. Reliability and Performance
+* Azure DNS is hosted on Microsoft’s global infrastructure.
+* Ensures fast response times and high availability.
+* Uses anycast routing to direct queries to the nearest DNS server.
+
+2. Security
+* Integrated with Azure role-based access control (RBAC).
+* Helps manage who can update DNS records.
+* Supports private DNS zones for internal name resolution.
+
+3. Ease of Use
+* Managed through the Azure Portal, CLI, or APIs.
+* Seamless integration with other Azure services.
+* No need to maintain your own DNS servers.
+
+4. Customizable Virtual Networks
+* You can link private DNS zones to your virtual networks.
+* Enables name resolution for VMs and services within your network.
+* Supports split-horizon DNS (different responses for internal vs external queries).
+
+5. Alias Records
+* Lets you map a DNS name to an Azure resource (like a public IP or Traffic Manager).
+* Automatically updates when the resource’s IP changes.
+* Simplifies DNS management for dynamic resources.
+
+
